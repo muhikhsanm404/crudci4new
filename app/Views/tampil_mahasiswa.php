@@ -1,6 +1,6 @@
-<?= $this->extend('layout'); ?>
+<?= $this->extend('layout') ?>
 
-<?= $this->section('content'); ?>
+<?= $this->section('content') ?>
 
 <div class="row md-6 pb-4">
   <h3>Tampilan Data Mahasiswa</h3>
@@ -37,12 +37,12 @@
       <td><?= $mhs->alamat ?></td>
       <td>
         <input type="hidden" name="_method" value="DELETE" />
-        <a href="<?= base_url("ubah/{$mhs->nim}") ?>"
+        <a href="<?= base_url("{$mhs->nim}/ubah") ?>"
           class="btn btn-primary btn-sm"
           onclick="return confirm('Apakah Anda Yakin ingin Edit?')">
           Edit
         </a>
-        <a href="<?= base_url("hapus/{$mhs->nim}") ?>"
+        <a href="<?= base_url("{$mhs->nim}/hapus") ?>"
           class="btn btn-danger btn-sm"
           onclick="return confirm('Apakah Anda Yakin ingin Hapus?')">
           Hapus
@@ -58,6 +58,6 @@
   <a href="<?= base_url('tambah')?>" class="btn btn-sm btn-success">
     TAMBAH DATA
   </a>
-</div> 
+</div>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection() ?>
