@@ -68,6 +68,7 @@
   </div>
 </div>
 
+
 <script type="text/javascript">
 const nim = document.getElementById("nim");
 const info_nim = document.getElementById("info_nim");
