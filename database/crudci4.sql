@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2023 at 09:54 AM
+-- Generation Time: Feb 28, 2023 at 12:07 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `mahasiswa` (
-  `nim` char(12) NOT NULL,
+  `nim` int(12) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `jurusan` enum('Sistem Komputer','Teknik Informatika','Sistem Informasi') NOT NULL,
@@ -40,11 +40,12 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `email`, `jurusan`, `alamat`) VALUES
-('1234567', 'bangriski', 'jhdevelopment46@gmail.com', 'Sistem Komputer', 'Indonesia'),
-('133', 'bangriski', 'jhdevelopment46@gmail.com', 'Sistem Komputer', 'Polandia'),
-('13343335', 'ikhsan', 'ikhmandirri@gmail.com', 'Sistem Komputer', 'Indonesia'),
-('133433378', 'ikhsan', 'bjorj@gmail.com', 'Sistem Komputer', 'Indonesia'),
-('243434', 'ikhsan', 'san6@gmail.com', 'Sistem Komputer', 'Indonesia');
+(133, 'bangriskia', 'development46@gmail.com', 'Sistem Komputer', 'Polandiaa'),
+(243434, 'ikhsan', 'san6@gmail.com', 'Sistem Komputer', 'Indonesia'),
+(1234567, 'bangriski', 'jhdevelopment6@gmail.com', 'Sistem Komputer', 'Indonesia'),
+(5778876, 'hello', 'at1866506@gmail.com', 'Sistem Komputer', 'Indo'),
+(13343335, 'ikhsan', 'ikhmandirri@gmail.com', 'Sistem Komputer', 'Indonesia'),
+(133433378, 'ikhsan', 'bjorj@gmail.com', 'Sistem Komputer', 'Indonesia');
 
 --
 -- Indexes for dumped tables
