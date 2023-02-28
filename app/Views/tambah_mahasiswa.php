@@ -1,6 +1,6 @@
-<?= $this->extend('layout'); ?>
+<?= $this->extend('layout') ?>
 
-<?= $this->section('content'); ?>
+<?= $this->section('content') ?>
 
 <div clas="container">
   <div class="row md-5 pb-4">
@@ -29,17 +29,23 @@
             <div class="row mb-3">
               <label for="nama" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"
-                id="nama" name="nama" required
-                value="<?= old('nama') ?>" />
+                <input type="text" class="form-control <?= $isInvalid('nama') ?>"
+                id="nama" name="nama"
+                value="<?= old('nama') ?>" required />
+                <div class="invalid-feedback">
+                  <?= $errors['nama'] ?? '' ?>
+                </div>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <label for="email" class="col-sm-2 col-form-label">Email</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control"
-                  id="inputEmail3" name="email" required
+                <input type="email" class="form-control <?= $isInvalid('email') ?>"
+                  id="email" name="email" required
                   value="<?= old('email') ?>" />
+                  <div class="invalid-feedback">
+                  <?= $errors['nama'] ?? '' ?>
+                </div>
               </div>
             </div>
             <div class="row mb-3">
@@ -60,7 +66,8 @@
                   value="<?= old('alamat') ?>" />
               </div>
             </div>
-            <button type="submit" id="kirim" class="btn btn-success">TAMBAH DATA</button>
+            <a class="btn btn-secondary" href="<?= base_url() ?>">KEMBALI</a>
+            <button type="submit" id="kirim" class="btn btn-success" disabled>TAMBAH DATA</button>
           </form>
         </div>
       </div>
@@ -68,23 +75,24 @@
   </div>
 </div>
 
-
 <script type="text/javascript">
 const nim = document.getElementById("nim");
-const info_nim = document.getElementById("info_nim");
+const info_nim = document.querySelector("label[for=nim] ~ div .invalid-feedback");
 const kirim = document.getElementById("kirim");
 
 // fungsi validasi nik
 function ceknim() {
-  if (nim.value == "") {
+  if (nim.value.length < 1) {
+    nim.classList.add("is-invalid");
     info_nim.innerHTML = "NIM tidak boleh kosong";
     kirim.disabled = true;
   } else {
-    kirim.disabled = false;
+    nim.classList.remove("is-invalid");
     info_nim.innerHTML = "";
+    kirim.disabled = false;
   }
 }
 //fungsi disable tombol kirim
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection() ?>
