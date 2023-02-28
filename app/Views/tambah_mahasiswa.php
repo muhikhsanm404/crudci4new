@@ -17,7 +17,7 @@
                         <div class="row md-5 pb-4">  
                             <label for="nim" class="col-sm-2 col-form-label">NIM</label>
                             <div class="col-sm-10">
-                                <input type="id" class="form-control <?= !($validation->hasError('nim')) ? 'is-invalid' : ''; ?>" id="nim" name="nim" onkeyup="ceknim()" autofocus value="<?= old('nim'); ?>" required>
+                                <input type="number" class="form-control <?= !($validation->hasError('nim')) ? 'is-invalid' : ''; ?>" id="nim" name="nim" onkeyup="ceknim()" autofocus value="<?= old('nim'); ?>" required>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('nim'); ?>
                                     <span id="info_nim" class="text-danger"></span>
