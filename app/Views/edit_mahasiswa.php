@@ -12,7 +12,7 @@
                         <div class="row md-5 pb-4">
                             <label for="nim" class="col-sm-2 col-form-label">NIM</label>
                             <div class="col-sm-10">
-                                <input type="id" value="<?= $hasil->nim ?>" class="form-control" id="nim" name="nim" autofocus required>
+                                <input type="number" value="<?= $hasil->nim ?>" class="form-control" id="nim" name="nim" autofocus required>
                             </div>
                         </div>
                         <div class="row mb-3">
