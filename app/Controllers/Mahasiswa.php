@@ -35,9 +35,11 @@ class Mahasiswa extends BaseController
       'errors' => session()->getFlashdata('errors'),
     ];
 
-    $data['isInvalid'] = function($field) use ($data) {
+    // fungsi untuk menambahkan class is-invalid bila terdapat error
+    $data['isInvalid'] = function ($field) use ($data) {
       return isset($data['errors'][$field]) ? 'is-invalid' : '';
     };
+    // $data['isInvalid'] = fn ($field) => isset($data['errors'][$field]) ? 'is-invalid' : '';
 
     if ($pesan = session()->getFlashdata('pesan')) {
       $data['pesan'] = $pesan;
@@ -98,7 +100,7 @@ class Mahasiswa extends BaseController
       'errors' => session()->getFlashdata('errors'),
     ];
 
-    $data['isSelected'] = function($old, $value) use ($data) {
+    $data['isSelected'] = function ($old, $value) use ($data) {
       $selected = $old == $value || $data['mhs']->jurusan == $value;
       return $selected ? 'selected' : '';
     };
@@ -166,7 +168,8 @@ class Mahasiswa extends BaseController
   }
 
 
-  public function setPesan($tipe, $msg) {
+  public function setPesan($tipe, $msg)
+  {
     $this->pesan = compact('tipe', 'msg');
   }
 }
